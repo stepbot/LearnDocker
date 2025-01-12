@@ -8,6 +8,8 @@ RUN apt-get update && \
         curl \
         iputils-ping \
         iproute2 \
+        git\
+        tree\
     && apt-get clean
 
 # Create the SSH directory and set up the test user

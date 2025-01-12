@@ -1,6 +1,6 @@
 ## Overview
 
-Welcome to the **LearnDocker** repository. This collection features a series of progressively complex examples designed to demonstrate how to integrate [Panel](https://panel.holoviz.org/), Large Language Models (LLMs) from [OpenAI](https://openai.com/), and Docker. The examples range from foundational setups using Docker Compose to advanced applications where users interact with LLMs via a web interface.
+Welcome to the **LearnDockerLLM** repository. This collection features a series of progressively complex examples designed to demonstrate how to integrate [Panel](https://panel.holoviz.org/), Large Language Models (LLMs) from [OpenAI](https://openai.com/), and Docker. The examples range from foundational setups using Docker Compose to advanced applications where users interact with LLMs via a web interface.
 
 ## Examples
 

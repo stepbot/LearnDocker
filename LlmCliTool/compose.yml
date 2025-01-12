@@ -1,0 +1,22 @@
+services:
+  panel:
+    build: ./panel_app
+    ports:
+      - "5006:5006"    # Panel app listening port
+    depends_on:
+      - target
+    env_file:
+      - ./panel_app/.env
+    networks:
+      - internal_net
+
+  target:
+    build: ./target_ssh
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - internal_net
+
+networks:
+  internal_net:
+    driver: bridge

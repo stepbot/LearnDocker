@@ -1,0 +1,6 @@
+panel
+bokeh
+pandas
+openai
+networkx
+pyvis

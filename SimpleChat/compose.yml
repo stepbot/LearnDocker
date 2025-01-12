@@ -1,0 +1,11 @@
+services:
+  chatgpt_panel_app:
+    build: .
+    ports:
+      - "5006:5006"
+    volumes:
+      - .:/app  # Useful for development to reflect code changes
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    restart: unless-stopped

@@ -1,0 +1,17 @@
+services:
+  panel:
+    build: ./panel_app
+    ports:
+      - "5006:5006"    # Panel app listening port
+    depends_on:
+      - target
+    environment:
+      TARGET_HOST: target
+      TARGET_SSH_USER: testuser
+      TARGET_SSH_PASS: password
+      TARGET_SSH_PORT: "22"
+
+  target:
+    build: ./target_ssh
+    ports:
+      - "2222:22"      # Expose SSH on host if needed; containers use internal port 22

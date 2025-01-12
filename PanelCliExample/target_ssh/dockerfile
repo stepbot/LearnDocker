@@ -1,5 +1,8 @@
-# target_ssh/Dockerfile
 FROM ubuntu:20.04
+
+# Set arguments for username and password
+ARG SSH_USER
+ARG SSH_PASS
 
 # Install OpenSSH server and necessary dependencies
 RUN apt-get update && \
@@ -8,8 +11,8 @@ RUN apt-get update && \
 
 # Create the SSH directory and set up the test user
 RUN mkdir /var/run/sshd && \
-    useradd -m -s /bin/bash testuser && \
-    echo "testuser:password" | chpasswd
+    useradd -m -s /bin/bash $SSH_USER && \
+    echo "$SSH_USER:$SSH_PASS" | chpasswd
 
 # Allow password authentication and permit root login if needed (for testing)
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
